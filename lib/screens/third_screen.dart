@@ -50,7 +50,8 @@ class ThirdScreen extends StatelessWidget {
                       return Column(
                         children: [
                           ListTile(
-                            contentPadding: EdgeInsets.symmetric(horizontal: 8),
+                            contentPadding: EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 4),
                             horizontalTitleGap: 6,
                             leading: CircleAvatar(
                                 radius: 46,
@@ -73,8 +74,6 @@ class ThirdScreen extends StatelessWidget {
                     } else if (provider.hasMoreData) {
                       provider.fetchUsers(provider.currentPage);
                       return Center(child: CircularProgressIndicator());
-                    } else {
-                      return Center(child: Text('No more users'));
                     }
                   },
                 ),

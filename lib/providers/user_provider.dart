@@ -25,6 +25,8 @@ class UserProvider with ChangeNotifier {
   Future<void> fetchUsers(int page) async {
     if (isLoading || !hasMoreData) return;
 
+    await Future.delayed(Duration(seconds: 2));
+
     isLoading = true;
     final response = await http
         .get(Uri.parse('https://reqres.in/api/users?page=$page&per_page=8'));
